@@ -15,5 +15,4 @@ public class GoCommand implements IExecute
 		// TODO Auto-generated method stub
 		
 	}
-
 }

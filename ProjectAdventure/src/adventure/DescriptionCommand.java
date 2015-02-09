@@ -10,9 +10,9 @@ public class DescriptionCommand implements IExecute
 	}
 
 	@Override
-	public void setZweitesWort(String zweitesWort) {
+	public void setZweitesWort(String zweitesWort)
+	{
 		// TODO Auto-generated method stub
 		
 	}
-
 }

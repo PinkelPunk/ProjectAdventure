@@ -14,5 +14,4 @@ public class UseCommand implements IExecute
 		// TODO Auto-generated method stub
 		
 	}
-
 }

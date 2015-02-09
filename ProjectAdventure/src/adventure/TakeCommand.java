@@ -14,5 +14,4 @@ public class TakeCommand implements IExecute
 		// TODO Auto-generated method stub
 		
 	}
-
 }
