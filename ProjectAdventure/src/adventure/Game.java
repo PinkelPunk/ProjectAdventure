@@ -9,9 +9,9 @@ public class Game
 	private Held held;
 	private Parser parser;
 	
-	public Game()
+	public Game(String comm)
 	{
-		
+		parser=new Parser(comm);
 	}
 	
 	private void createWorld()
