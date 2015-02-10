@@ -1,15 +1,18 @@
 package adventure;
 
-<<<<<<< HEAD
-=======
 import java.io.*;
 
->>>>>>> origin/master
+@SuppressWarnings("unused")
 public class Game
 {
 	private Raum aktuellerRaum;
 	private Held held;
 	private Parser parser;
+	
+	public Game(String comm)
+	{
+		parser=new Parser(comm);
+	}
 	
 	private void createWorld()
 	{
@@ -18,9 +21,6 @@ public class Game
 	
 	private void gameMenue()
 	{
-<<<<<<< HEAD
-		
-=======
 		System.out.println("-----------------------------------");
 		System.out.println("--------Punkmainyu Studios---------");
 		System.out.println("-----------------------------------");
@@ -54,7 +54,6 @@ public class Game
 		{
 			System.out.println("Sie haben keine zahl eingegeben");
 		}*/
->>>>>>> origin/master
 	}
 	
 	private void init()
@@ -62,17 +61,12 @@ public class Game
 		
 	}
 	
-	public Game()
+	public static void goRaum(String raum)
 	{
 		
 	}
 	
-	public void goRaum(String raum)
-	{
-		
-	}
-	
-	public void raumBeschreibung()
+	public static void raumBeschreibung()
 	{
 		
 	}
