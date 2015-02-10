@@ -6,6 +6,11 @@ public class Game
 	private Held held;
 	private Parser parser;
 	
+	public Game()
+	{
+		
+	}
+	
 	private void createWorld()
 	{
 		
@@ -21,11 +26,6 @@ public class Game
 	}
 	
 	private void init()
-	{
-		
-	}
-	
-	public Game()
 	{
 		
 	}

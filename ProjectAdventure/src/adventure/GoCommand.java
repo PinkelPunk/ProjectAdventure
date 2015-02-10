@@ -11,8 +11,8 @@ public class GoCommand implements IExecute
 	}
 
 	@Override
-	public void setZweitesWort(String zweitesWort) {
-		// TODO Auto-generated method stub
-		
+	public void setZweitesWort(String zweitesWort)
+	{
+		this.zweitesWort=zweitesWort;
 	}
 }

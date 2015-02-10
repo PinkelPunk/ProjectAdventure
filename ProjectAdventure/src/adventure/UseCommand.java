@@ -2,6 +2,7 @@ package adventure;
 
 public class UseCommand implements IExecute
 {
+	private String zweitesWort;
 
 	@Override
 	public String execute() {
@@ -10,8 +11,8 @@ public class UseCommand implements IExecute
 	}
 
 	@Override
-	public void setZweitesWort(String zweitesWort) {
-		// TODO Auto-generated method stub
-		
+	public void setZweitesWort(String zweitesWort)
+	{
+		this.zweitesWort=zweitesWort;
 	}
 }

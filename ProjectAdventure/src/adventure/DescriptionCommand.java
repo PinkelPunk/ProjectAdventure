@@ -2,6 +2,7 @@ package adventure;
 
 public class DescriptionCommand implements IExecute
 {
+	private String zweitesWort;
 
 	@Override
 	public String execute() {
@@ -12,7 +13,6 @@ public class DescriptionCommand implements IExecute
 	@Override
 	public void setZweitesWort(String zweitesWort)
 	{
-		// TODO Auto-generated method stub
-		
+		this.zweitesWort=zweitesWort;
 	}
 }
