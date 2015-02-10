@@ -2,17 +2,17 @@ package adventure;
 
 public class DescriptionCommand implements IExecute
 {
+	private String zweitesWort;
 
 	@Override
-	public String execute() {
-		// TODO Auto-generated method stub
-		return null;
+	public String execute()
+	{
+		return "Beschreibung: " + zweitesWort;
 	}
 
 	@Override
 	public void setZweitesWort(String zweitesWort)
 	{
-		// TODO Auto-generated method stub
-		
+		this.zweitesWort=zweitesWort;
 	}
 }
