@@ -13,7 +13,11 @@ public class Game
 	
 	private void gameMenue()
 	{
-		
+		System.out.println("-----------------------------------");
+		System.out.println("--------Punkmainyu Studios---------");
+		System.out.println("-----------------------------------");
+		System.out.println("Startmenu - [1] Start Game");
+
 	}
 	
 	private void init()
