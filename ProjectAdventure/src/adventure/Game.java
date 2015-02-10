@@ -9,6 +9,11 @@ public class Game
 	private Held held;
 	private Parser parser;
 	
+	public Game()
+	{
+		
+	}
+	
 	private void createWorld()
 	{
 		
@@ -56,17 +61,12 @@ public class Game
 		
 	}
 	
-	public Game()
+	public static void goRaum(String raum)
 	{
 		
 	}
 	
-	public void goRaum(String raum)
-	{
-		
-	}
-	
-	public void raumBeschreibung()
+	public static void raumBeschreibung()
 	{
 		
 	}
