@@ -7,12 +7,18 @@ public class DescriptionCommand implements IExecute
 	@Override
 	public String execute()
 	{
-		return "Beschreibung: " + zweitesWort;
+		return zweitesWort;
 	}
 
 	@Override
 	public void setZweitesWort(String zweitesWort)
 	{
 		this.zweitesWort=zweitesWort;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Beschreibung: " + zweitesWort + ".";
 	}
 }
