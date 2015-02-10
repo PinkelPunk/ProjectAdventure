@@ -2,16 +2,29 @@ package adventure;
 
 public class TakeCommand implements IExecute
 {
-
-	@Override
-	public String execute() {
-		// TODO Auto-generated method stub
-		return null;
+	private String zweitesWort;
+	
+	public TakeCommand(String zweitesWort)
+	{
+		setZweitesWort(zweitesWort);
+		execute();
 	}
 
 	@Override
-	public void setZweitesWort(String zweitesWort) {
-		// TODO Auto-generated method stub
-		
+	public String execute()
+	{
+		return zweitesWort;
+	}
+
+	@Override
+	public void setZweitesWort(String zweitesWort)
+	{
+		this.zweitesWort=zweitesWort;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Du nimmst " + zweitesWort + ".";
 	}
 }
