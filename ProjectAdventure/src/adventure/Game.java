@@ -30,12 +30,12 @@ public class Game
 		
 	}
 	
-	public void goRaum(String raum)
+	public static void goRaum(String raum)
 	{
 		
 	}
 	
-	public void raumBeschreibung()
+	public static void raumBeschreibung()
 	{
 		
 	}

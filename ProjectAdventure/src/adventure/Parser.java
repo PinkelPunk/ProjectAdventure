@@ -8,12 +8,12 @@ public class Parser
 	
 	public IExecute getCommand(String command)
 	{
-		return null;
+		return this.befehle.get(command);
 	}
 	
 	public void setBefehle(String command, IExecute execute)
 	{
-		
+		this.befehle.put(command, execute);
 	}
 
 }
