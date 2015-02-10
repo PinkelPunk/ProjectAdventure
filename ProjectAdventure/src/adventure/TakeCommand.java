@@ -5,9 +5,9 @@ public class TakeCommand implements IExecute
 	private String zweitesWort;
 
 	@Override
-	public String execute() {
-		// TODO Auto-generated method stub
-		return null;
+	public String execute()
+	{
+		return "Nimm: " + zweitesWort;
 	}
 
 	@Override

@@ -2,6 +2,7 @@ package adventure;
 
 import java.util.HashMap;
 
+@SuppressWarnings("unused")
 public class Raum
 {
 	private HashMap<String, Raum> ausgaenge;

@@ -5,9 +5,10 @@ public class GoCommand implements IExecute
 	private String zweitesWort;
 	
 	@Override
-	public String execute() {
-		// TODO Auto-generated method stub
-		return null;
+	public String execute()
+	{
+		
+		return "Gehe zu " + zweitesWort;
 	}
 
 	@Override

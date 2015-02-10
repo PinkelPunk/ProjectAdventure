@@ -1,5 +1,8 @@
 package adventure;
 
+import java.io.*;
+
+@SuppressWarnings("unused")
 public class Game
 {
 	private Raum aktuellerRaum;
