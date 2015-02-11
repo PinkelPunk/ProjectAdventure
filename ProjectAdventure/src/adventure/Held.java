@@ -13,7 +13,7 @@ public class Held
 	{
 		this.name=name;
 	}
-	
+
 	private LinkedList<Gegenstand> getInventar()
 	{
 		return inventar;
