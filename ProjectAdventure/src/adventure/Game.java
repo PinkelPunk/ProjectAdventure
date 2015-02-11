@@ -3,6 +3,7 @@ package adventure;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 
 
@@ -12,7 +13,8 @@ public class Game
 	private Raum aktuellerRaum;
 	private Held held;
 	private Parser parser;
-	
+
+
 	public Game(String comm)
 	{
 		parser=new Parser(comm);
@@ -24,19 +26,46 @@ public class Game
 		gameMenue();
 	}
 
-/*	private void createWorld()
+	private void createWorld()
 	{
-		int hauptLinienCounter = 0;
-		ArrayList<Raum> hauptLinie = new ArrayList<>();
-		int zuffiHaupt = (int) ((Math.random()*10)+3);
-		if(hauptLinienCounter>zuffiHaupt)
-		{
-			Raum raum
-		}
 
 
+        HashMap<String, Raum> gebaeude = new HashMap<String, Raum>();
+		// Räume der Hauptader erstellen
+        Raum startraum = new Raum(gebaeude);//
+        Raum  aderRaum1 = new Raum(gebaeude);//             Map
+        Raum  aderRaum2 = new Raum(gebaeude);//
+        Raum  aderRaum3 = new Raum(gebaeude);//
+        Raum  aderRaum4 = new Raum(gebaeude);//
+        Raum  aderRaum5 = new Raum(gebaeude);//         n4      n3
+        // Hauptader-Räume miteinander verbinden     n5 ader2 - ader1 n2
+        startraum.addAusgang(aderRaum1,"nord");//    n6 ader3   start n1
+        aderRaum1.addAusgang(aderRaum2,"west");//    n7 ader4 - ader5
+        aderRaum2.addAusgang(aderRaum3,"sued");//         n8      n9
+        aderRaum3.addAusgang(aderRaum4,"sued");//
+        aderRaum4.addAusgang(aderRaum5,"ost");//
+        //Nebenraeume der Hauptader
+        Raum nebenRaum1 = new Raum(gebaeude);
+        Raum nebenRaum2 = new Raum(gebaeude);
+        Raum nebenRaum3 = new Raum(gebaeude);
+        Raum nebenRaum4 = new Raum(gebaeude);
+        Raum nebenRaum5 = new Raum(gebaeude);
+        Raum nebenRaum6 = new Raum(gebaeude);
+        Raum nebenRaum7 = new Raum(gebaeude);
+        Raum nebenRaum8 = new Raum(gebaeude);
+        Raum nebenRaum9 = new Raum(gebaeude);
+        //Nebenräume mit Raumader verbinden
+        startraum.addAusgang(nebenRaum1,"ost");
+        aderRaum1.addAusgang(nebenRaum2,"ost");
+        aderRaum1.addAusgang(nebenRaum3,"nord");
+        aderRaum2.addAusgang(nebenRaum4,"nord");
+        aderRaum2.addAusgang(nebenRaum5,"west");
+        aderRaum3.addAusgang(nebenRaum6,"west");
+        aderRaum4.addAusgang(nebenRaum7,"west");
+        aderRaum4.addAusgang(nebenRaum8,"sued");
+        aderRaum5.addAusgang(nebenRaum9,"sued");
 
-	} */
+	}
 	
 	private void gameMenue()
 	{
