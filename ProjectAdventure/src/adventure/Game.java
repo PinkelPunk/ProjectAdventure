@@ -1,6 +1,8 @@
 package adventure;
 
+
 import java.io.*;
+
 
 @SuppressWarnings("unused")
 public class Game
@@ -14,6 +16,12 @@ public class Game
 		parser=new Parser(comm);
 	}
 	
+
+	public Game()
+	{
+		gameMenue();
+	}
+
 	private void createWorld()
 	{
 		
@@ -24,38 +32,36 @@ public class Game
 		System.out.println("-----------------------------------");
 		System.out.println("--------Punkmainyu Studios---------");
 		System.out.println("-----------------------------------");
+		System.out.println("-----------------------------------");
 		System.out.println("-------Member of the Chamber-------");
+		System.out.println("-----------------------------------");
 
 		//eingaben lesen
 		String eingabe;
 		try
 		{
 			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-			do
-			{
-				System.out.println("Wie soll dein Held heißen?");
-			}while((eingabe=br.readLine())!=null);
-			File file = new File("/users/Spielernamen.txt");
-			if(!file.exists())
-			{
-				file.createNewFile();
-			}
-			FileWriter fw = new FileWriter(file.getAbsoluteFile());
-			BufferedWriter bw = new BufferedWriter(fw);
-			bw.write(eingabe);
-			br.close();
+			System.out.println("");
+			System.out.println("Bitte geben Sie einen Namen ein. ");
+
+				eingabe=br.readLine();
+				FileWriter fw = new FileWriter("docs/Spielername.txt");
+				BufferedWriter bw = new BufferedWriter(fw);
+				bw.write(eingabe);
+				System.out.println("Was für ein schaurig schoener Name! - " + eingabe);
+
+				bw.close();
+				br.close();
+
 		}
 		catch(IOException e)
 		{
-
+			System.out.println("Die tolle 'hab keine ahnung' Exception" + e.getMessage());
 		}
-		// NumberCatch von Hasanovic
-		/*catch(NumberFormatException e)
-		{
-			System.out.println("Sie haben keine zahl eingegeben");
-		}*/
+
 	}
 	
+		
 	private void init()
 	{
 		
@@ -66,7 +72,8 @@ public class Game
 		
 	}
 	
-	public static void raumBeschreibung()
+
+	public void raumBeschreibung()
 	{
 		
 	}
