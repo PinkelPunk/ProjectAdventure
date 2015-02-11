@@ -1,3 +1,4 @@
+
 package adventure;
 
 import java.util.LinkedList;
@@ -13,10 +14,13 @@ public class Held
 	{
 		this.name=name;
 	}
-
+	
 	private LinkedList<Gegenstand> getInventar()
 	{
 		return inventar;
 	}
 	
 }
+
+
+
