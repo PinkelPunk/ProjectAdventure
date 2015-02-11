@@ -46,6 +46,18 @@ public class Parser
 					UseCommand commUse=new UseCommand(benutze);
 					System.out.println(commUse.toString());
 					return (IExecute)commUse;
+					
+				case "DescriptionCommand":
+					scan=new Scanner(System.in);
+					System.out.println("Willst du die Raum- oder die Gegenstandsbeschreibung sehen?");
+					String description=scan.next();
+					DescriptionCommand commDes=new DescriptionCommand(description);
+					System.out.println(commDes.toString());
+					return (IExecute)commDes;
+				
+				default:
+					System.out.println("Bitte gültigen Command eingeben!");
+					System.exit(0);
 			}
 		}
 		catch(Exception e)
