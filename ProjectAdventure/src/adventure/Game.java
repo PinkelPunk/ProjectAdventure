@@ -78,17 +78,17 @@ public class Game
 	{
 		try
 		{
-			ArrayList brInhaltHalter = null;
+			ArrayList<String> brInhaltHalter = new ArrayList<String>();
 			int counter = 0;
 			String zeile;
-			BufferedReader br = new BufferedReader(new FileReader("docs/Raumbeschreibung.txt"));
+			FileReader fr=new FileReader("docs/Raumbeschreibung.txt");
+			BufferedReader br = new BufferedReader(fr);
 			try
 			{
 				while((zeile=br.readLine()) !=null)
                 {
+                    brInhaltHalter.add(zeile);
                     counter++;
-					brInhaltHalter.add(zeile);
-
 				}
 
 				int zufallszahl = (int) ((Math.random()*counter));
