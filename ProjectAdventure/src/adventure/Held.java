@@ -9,9 +9,14 @@ public class Held
 	private int lebensPunkte;
 	private String name;
 	
+	public Held(String  name)
+	{
+		this.name=name;
+	}
+	
 	private LinkedList<Gegenstand> getInventar()
 	{
-		return null;
+		return inventar;
 	}
 	
 }
