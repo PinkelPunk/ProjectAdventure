@@ -12,9 +12,9 @@ public class Main {
 		raum1.addAusgang(raum1,"nord");
 		raum1.getAusgang("nord");
 		
-		
-		Game spiel1=new Game("TakeCommand");
-		
+		Game spiel1=new Game("Go north");
+		Game spiel2=new Game("Take Item");
+				
 	}
 
 }

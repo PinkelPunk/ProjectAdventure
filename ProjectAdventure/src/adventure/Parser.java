@@ -1,12 +1,12 @@
 package adventure;
 
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class Parser
 {
 	private HashMap<String,IExecute> befehle;
-	private String command;
+	private String zweitesWort;
+	private String[] woerter;
 	private IExecute exec;
 	
 	public Parser(String comm)
@@ -15,48 +15,40 @@ public class Parser
 		this.befehle=new HashMap<String, IExecute>();
 	}
 	
-	@SuppressWarnings("resource")
 	public IExecute getCommand(String command)
 	{
 		try
 		{
-			Scanner scan;
-			switch(command)
+			woerter=command.split(" ");
+			
+			switch(woerter[0].toLowerCase())
 			{
-				case "GoCommand":
-					scan=new Scanner(System.in);
-					System.out.println("In welche Richtung moechtest du gehen?");
-					String richtung=scan.next();
-					GoCommand commGo=new GoCommand(richtung);
+				case "go":
+					zweitesWort=woerter[1];
+					GoCommand commGo=new GoCommand(zweitesWort);
 					System.out.println(commGo.toString());
 					return (IExecute)commGo;
 			
-				case "TakeCommand":
-					scan=new Scanner(System.in);
-					System.out.println("Was willst du nehmen?");
-					String gegenstand=scan.next();
-					TakeCommand commTake=new TakeCommand(gegenstand);
+				case "take":
+					zweitesWort=woerter[1];
+					TakeCommand commTake=new TakeCommand(zweitesWort);
 					System.out.println(commTake.toString());
 					return (IExecute)commTake;
 				
-				case "UseCommand":
-					scan=new Scanner(System.in);
-					System.out.println("Was willst du benutzen?");
-					String benutze=scan.next();
-					UseCommand commUse=new UseCommand(benutze);
+				case "use":
+					zweitesWort=woerter[1];
+					UseCommand commUse=new UseCommand(zweitesWort);
 					System.out.println(commUse.toString());
 					return (IExecute)commUse;
 					
-				case "DescriptionCommand":
-					scan=new Scanner(System.in);
-					System.out.println("Willst du die Raum- oder die Gegenstandsbeschreibung sehen?");
-					String description=scan.next();
-					DescriptionCommand commDes=new DescriptionCommand(description);
+				case "description":
+					zweitesWort=woerter[1];
+					DescriptionCommand commDes=new DescriptionCommand(zweitesWort);
 					System.out.println(commDes.toString());
 					return (IExecute)commDes;
 				
 				default:
-					System.out.println("Bitte gültigen Command eingeben!");
+					System.out.println("Bitte gueltigen Command eingeben!");
 					System.exit(0);
 			}
 		}
@@ -70,9 +62,9 @@ public class Parser
 	
 	public void setBefehle(String command, IExecute execute)
 	{
-		this.command=command;
+		this.woerter=command.split(" ");
 		this.exec=execute;
-		this.befehle.put(this.command, this.exec);
+		this.befehle.put(this.woerter[0], this.exec);
 	}
 
 }

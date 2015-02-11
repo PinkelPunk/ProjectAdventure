@@ -48,7 +48,7 @@ public class Game
 				FileWriter fw = new FileWriter("docs/Spielername.txt");
 				BufferedWriter bw = new BufferedWriter(fw);
 				bw.write(eingabe);
-				System.out.println("Was für ein schaurig schoener Name! - " + eingabe);
+				System.out.println("Was fuer ein schaurig schoener Name! - " + eingabe);
 
 				bw.close();
 				br.close();
