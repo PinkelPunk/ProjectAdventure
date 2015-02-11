@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args)
 	{
-		HashMap gebaeude = new HashMap();
+		HashMap<String, Raum> gebaeude = new HashMap<String, Raum>();
 		Raum raum1 = new Raum(gebaeude);
 		Raum raum2 = new Raum(gebaeude);
 		raum1.addAusgang(raum1,"nord");
@@ -14,7 +14,7 @@ public class Main {
 
 		
 		Game spiel1=new Game();
-		spiel1.raumBeschreibung();
+		Game.raumBeschreibung();
 		
 	}
 
