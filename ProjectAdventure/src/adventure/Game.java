@@ -3,6 +3,7 @@ package adventure;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 
 @SuppressWarnings("unused")
@@ -23,10 +24,19 @@ public class Game
 		gameMenue();
 	}
 
-	private void createWorld()
+/*	private void createWorld()
 	{
-		
-	}
+		int hauptLinienCounter = 0;
+		ArrayList<Raum> hauptLinie = new ArrayList<>();
+		int zuffiHaupt = (int) ((Math.random()*10)+3);
+		if(hauptLinienCounter>zuffiHaupt)
+		{
+			Raum raum
+		}
+
+
+
+	} */
 	
 	private void gameMenue()
 	{
@@ -78,7 +88,7 @@ public class Game
 	{
 		try
 		{
-			ArrayList brInhaltHalter = null;
+			ArrayList<String> brInhaltHalter = new ArrayList();
 			int counter = 0;
 			String zeile;
 			BufferedReader br = new BufferedReader(new FileReader("docs/Raumbeschreibung.txt"));
