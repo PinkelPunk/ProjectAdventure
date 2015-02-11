@@ -13,6 +13,8 @@ public class Main {
 		raum1.getAusgang("nord");
 		
 		
+		Game spiel1=new Game("TakeCommand");
+		
 	}
 
 }

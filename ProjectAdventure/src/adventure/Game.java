@@ -4,11 +4,18 @@ package adventure;
 import java.io.*;
 
 
+@SuppressWarnings("unused")
 public class Game
 {
 	private Raum aktuellerRaum;
 	private Held held;
 	private Parser parser;
+	
+	public Game(String comm)
+	{
+		parser=new Parser(comm);
+	}
+	
 
 	public Game()
 	{
@@ -52,21 +59,20 @@ public class Game
 			System.out.println("Die tolle 'hab keine ahnung' Exception" + e.getMessage());
 		}
 
-
 	}
 	
+		
 	private void init()
 	{
 		
 	}
 	
-
-	
-	public void goRaum(String raum)
+	public static void goRaum(String raum)
 	{
 		
 	}
 	
+
 	public void raumBeschreibung()
 	{
 		
