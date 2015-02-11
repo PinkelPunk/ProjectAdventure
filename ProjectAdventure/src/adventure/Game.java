@@ -2,6 +2,7 @@ package adventure;
 
 
 import java.io.*;
+import java.util.ArrayList;
 
 
 @SuppressWarnings("unused")
@@ -69,12 +70,43 @@ public class Game
 	
 	public static void goRaum(String raum)
 	{
-		
+		raumBeschreibung();
 	}
 	
 
-	public void raumBeschreibung()
+	public static void raumBeschreibung()
 	{
-		
+		try
+		{
+			ArrayList brInhaltHalter = null;
+			int counter = 0;
+			String zeile;
+			BufferedReader br = new BufferedReader(new FileReader("docs/Raumbeschreibung.txt"));
+			try
+			{
+				while((zeile=br.readLine()) !=null)
+                {
+                    counter++;
+					brInhaltHalter.add(zeile);
+
+				}
+
+				int zufallszahl = (int) ((Math.random()*counter));
+
+				System.out.println(brInhaltHalter.get(zufallszahl));
+				br.close();
+
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+
+		}
+		catch (FileNotFoundException e)
+		{
+			System.out.println("Datei nicht gefunden"); e.printStackTrace();
+
+		}
 	}
 }
