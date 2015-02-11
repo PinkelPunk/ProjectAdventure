@@ -12,6 +12,7 @@ public class Held
 	public Held(String  name)
 	{
 		this.name=name;
+		lebensPunkte=100;
 	}
 	
 	private LinkedList<Gegenstand> getInventar()

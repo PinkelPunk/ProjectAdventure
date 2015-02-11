@@ -23,7 +23,7 @@ public class Parser
 			Scanner scan;
 			switch(command)
 			{
-				case "GoCommand": 
+				case "GoCommand":
 					scan=new Scanner(System.in);
 					System.out.println("In welche Richtung moechtest du gehen?");
 					String richtung=scan.next();
@@ -31,7 +31,7 @@ public class Parser
 					System.out.println(commGo.toString());
 					return (IExecute)commGo;
 			
-				case "TakeCommand": 
+				case "TakeCommand":
 					scan=new Scanner(System.in);
 					System.out.println("Was willst du nehmen?");
 					String gegenstand=scan.next();
