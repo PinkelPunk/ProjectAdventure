@@ -54,6 +54,10 @@ public class Parser
 					DescriptionCommand commDes=new DescriptionCommand(description);
 					System.out.println(commDes.toString());
 					return (IExecute)commDes;
+				
+				default:
+					System.out.println("Bitte gültigen Command eingeben!");
+					System.exit(0);
 			}
 		}
 		catch(Exception e)
