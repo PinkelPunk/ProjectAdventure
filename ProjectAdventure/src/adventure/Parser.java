@@ -56,7 +56,7 @@ public class Parser
 					return (IExecute)commDes;
 				
 				default:
-					System.out.println("Bitte gültigen Command eingeben!");
+					System.out.println("Bitte gueltigen Command eingeben!");
 					System.exit(0);
 			}
 		}

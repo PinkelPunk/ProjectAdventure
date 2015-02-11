@@ -11,9 +11,10 @@ public class Main {
 		Raum raum2 = new Raum(gebaeude);
 		raum1.addAusgang(raum1,"nord");
 		raum1.getAusgang("nord");
+
 		
-		
-		Game spiel1=new Game("TakeCommand");
+		Game spiel1=new Game();
+		spiel1.raumBeschreibung();
 		
 	}
 
