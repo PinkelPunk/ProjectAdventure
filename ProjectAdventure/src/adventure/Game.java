@@ -2,7 +2,8 @@ package adventure;
 
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 
 @SuppressWarnings("unused")
@@ -23,10 +24,19 @@ public class Game
 		gameMenue();
 	}
 
-	private void createWorld()
+/*	private void createWorld()
 	{
-		
-	}
+		int hauptLinienCounter = 0;
+		ArrayList<Raum> hauptLinie = new ArrayList<>();
+		int zuffiHaupt = (int) ((Math.random()*10)+3);
+		if(hauptLinienCounter>zuffiHaupt)
+		{
+			Raum raum
+		}
+
+
+
+	} */
 	
 	private void gameMenue()
 	{
@@ -49,7 +59,7 @@ public class Game
 				FileWriter fw = new FileWriter("docs/Spielername.txt");
 				BufferedWriter bw = new BufferedWriter(fw);
 				bw.write(eingabe);
-				System.out.println("Was fuer ein schaurig schoener Name! - " + eingabe);
+				System.out.println("Was für ein schaurig schoener Name! - " + eingabe);
 
 				bw.close();
 				br.close();
@@ -70,7 +80,7 @@ public class Game
 	
 	public static void goRaum(String raum)
 	{
-		
+		raumBeschreibung();
 	}
 	
 
@@ -81,14 +91,14 @@ public class Game
 			ArrayList<String> brInhaltHalter = new ArrayList<String>();
 			int counter = 0;
 			String zeile;
-			FileReader fr=new FileReader("docs/Raumbeschreibung.txt");
-			BufferedReader br = new BufferedReader(fr);
+			BufferedReader br = new BufferedReader(new FileReader("docs/Raumbeschreibung.txt"));
 			try
 			{
 				while((zeile=br.readLine()) !=null)
                 {
-                    brInhaltHalter.add(zeile);
                     counter++;
+					brInhaltHalter.add(zeile);
+
 				}
 
 				int zufallszahl = (int) ((Math.random()*counter));
