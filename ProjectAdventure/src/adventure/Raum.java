@@ -11,14 +11,22 @@ public class Raum
 	private String langBeschreibung;
 	private String name;
 
-	public Raum(HashMap<String, Raum> ausgaenge)
+	public Raum(HashMap<String, Raum> ausgaenge, String name, String kurzBeschreibung)
 	{
 		this.ausgaenge= new HashMap<String, Raum>();
 		this.ausgaenge = ausgaenge;
+        this.name = name;
+        this.kurzBeschreibung=kurzBeschreibung;
+
+
 	}
 
+    public void setItemList(HashMap<Gegenstand, String> itemList)
+    {
+        this.itemList = itemList;
+    }
 
-	public Raum addAusgang(Raum raum, String s)
+    public Raum addAusgang(Raum raum, String s)
 	{
 		ausgaenge.put(s, raum);
 		return raum;

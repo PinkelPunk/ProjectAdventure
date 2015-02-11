@@ -29,31 +29,41 @@ public class Game
 	private void createWorld()
 	{
 
+        /*                      map
+                             n4      n3
+                        n5 ader2 - ader1 n2
+                        n6 ader3   start n1
+                        n7 ader4 - ader5
+                            n8      n9
+
+         */
+
+
 
         HashMap<String, Raum> gebaeude = new HashMap<String, Raum>();
 		// Räume der Hauptader erstellen
-        Raum startraum = new Raum(gebaeude);//
-        Raum  aderRaum1 = new Raum(gebaeude);//             Map
-        Raum  aderRaum2 = new Raum(gebaeude);//
-        Raum  aderRaum3 = new Raum(gebaeude);//
-        Raum  aderRaum4 = new Raum(gebaeude);//
-        Raum  aderRaum5 = new Raum(gebaeude);//         n4      n3
-        // Hauptader-Räume miteinander verbinden     n5 ader2 - ader1 n2
-        startraum.addAusgang(aderRaum1,"nord");//    n6 ader3   start n1
-        aderRaum1.addAusgang(aderRaum2,"west");//    n7 ader4 - ader5
-        aderRaum2.addAusgang(aderRaum3,"sued");//         n8      n9
-        aderRaum3.addAusgang(aderRaum4,"sued");//
-        aderRaum4.addAusgang(aderRaum5,"ost");//
+        Raum startraum = new Raum(gebaeude,"Eingang","Eingang");
+        Raum  aderRaum1 = new Raum(gebaeude,"Wachraum","Ein dunkler Wachraum.");
+        Raum  aderRaum2 = new Raum(gebaeude,"Schmiede","Es glimt noch Kohle in der Schmiede.");
+        Raum  aderRaum3 = new Raum(gebaeude,"Lager","Ein leerer Lagerraum.");
+        Raum  aderRaum4 = new Raum(gebaeude,"Lavaraum","Lava rinnt aus den Fugen der Waende! Die Hitze erdrueckt dich!");
+        Raum  aderRaum5 = new Raum(gebaeude,"Ausgang","Eine düstere endlos erschreinende Treppe, die nach oben führt...");
+        // Hauptader-Räume miteinander verbinden
+        startraum.addAusgang(aderRaum1,"nord");
+        aderRaum1.addAusgang(aderRaum2,"west");
+        aderRaum2.addAusgang(aderRaum3,"sued");
+        aderRaum3.addAusgang(aderRaum4,"sued");
+        aderRaum4.addAusgang(aderRaum5,"ost");
         //Nebenraeume der Hauptader
-        Raum nebenRaum1 = new Raum(gebaeude);
-        Raum nebenRaum2 = new Raum(gebaeude);
-        Raum nebenRaum3 = new Raum(gebaeude);
-        Raum nebenRaum4 = new Raum(gebaeude);
-        Raum nebenRaum5 = new Raum(gebaeude);
-        Raum nebenRaum6 = new Raum(gebaeude);
-        Raum nebenRaum7 = new Raum(gebaeude);
-        Raum nebenRaum8 = new Raum(gebaeude);
-        Raum nebenRaum9 = new Raum(gebaeude);
+        Raum nebenRaum1 = new Raum(gebaeude,"Kammer","Eine kleine dunkle Kammer.");
+        Raum nebenRaum2 = new Raum(gebaeude,"Schlafzimmer", "Oh, es stehen zwei Betten im Raum.");
+        Raum nebenRaum3 = new Raum(gebaeude,"Besenkammer","Ein Besen in einer Kammer.");
+        Raum nebenRaum4 = new Raum(gebaeude,"Kueche", "Eine erloschende Feuerstelle ist in der mitte des Raumes.");
+        Raum nebenRaum5 = new Raum(gebaeude,"Wachposten","Einst wurden hier wohl Wache gehalten.");
+        Raum nebenRaum6 = new Raum(gebaeude,"Schatzkammer","Eine geplünderte Schatzkammer...");
+        Raum nebenRaum7 = new Raum(gebaeude,"Folterkammer","Die Schreie der gefolterten, sitzen in jedem Stein");
+        Raum nebenRaum8 = new Raum(gebaeude,"Brunnen","Ein tiefer Brunnen steht in der mitte des Raumes.");
+        Raum nebenRaum9 = new Raum(gebaeude,"Kerker","Ein Skelett liegt in der Ecke des Kerkers.");
         //Nebenräume mit Raumader verbinden
         startraum.addAusgang(nebenRaum1,"ost");
         aderRaum1.addAusgang(nebenRaum2,"ost");
@@ -64,9 +74,21 @@ public class Game
         aderRaum4.addAusgang(nebenRaum7,"west");
         aderRaum4.addAusgang(nebenRaum8,"sued");
         aderRaum5.addAusgang(nebenRaum9,"sued");
+        this.aktuellerRaum=startraum;
 
-	}
-	
+        //Gegenstände erstellen
+        Gegenstand schwert = new Gegenstand("Ein altes Schwert.","Ein sehr, sehr altes Schwert mit einem kleinen TotenKopf im Griff.");
+        Gegenstand hand = new Gegenstand("Eine Hand","Ein eiskaltes Haendchen.");
+        Gegenstand brot = new Gegenstand("Ein altes Brot","Lecker, es schmeckt nach Kaese.");
+        Gegenstand Pfeife = new Gegenstand("Eine Pfeife.","Eine hoelzerne Pfeife.");
+
+        //Gegenstand spawn Aderraum 2 wozu der String?!
+        HashMap itemlist1 = new HashMap();
+        itemlist1.put(schwert,"Schwert");
+        itemlist1.put(hand,"hand");
+        aderRaum2.setItemList(itemlist1);
+    }
+
 	private void gameMenue()
 	{
 		System.out.println("-----------------------------------");
@@ -109,6 +131,7 @@ public class Game
 	
 	public static void goRaum(String raum)
 	{
+
 		raumBeschreibung();
 	}
 	
