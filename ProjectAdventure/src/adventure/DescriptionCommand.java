@@ -3,7 +3,12 @@ package adventure;
 public class DescriptionCommand implements IExecute
 {
 	private String zweitesWort;
-
+	
+	public DescriptionCommand(String zweitesWort)
+	{
+		this.zweitesWort=zweitesWort;
+	}
+	
 	@Override
 	public String execute()
 	{
