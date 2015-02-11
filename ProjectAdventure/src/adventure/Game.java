@@ -88,7 +88,7 @@ public class Game
 	{
 		try
 		{
-			ArrayList<String> brInhaltHalter = new ArrayList();
+			ArrayList<String> brInhaltHalter = new ArrayList<String>();
 			int counter = 0;
 			String zeile;
 			BufferedReader br = new BufferedReader(new FileReader("docs/Raumbeschreibung.txt"));
