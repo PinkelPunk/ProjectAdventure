@@ -1,6 +1,5 @@
 package adventure;
 
-@SuppressWarnings("unused")
 public class Gegenstand
 {
 	private String kurzBeschreibung;
@@ -10,5 +9,25 @@ public class Gegenstand
 	{
 		this.kurzBeschreibung=kurzBeschreibung;
 		this.langBeschreibung=langBeschreibung;
+	}
+
+	/**
+	 * @return the kurzBeschreibung
+	 */
+	public String getKurzBeschreibung() {
+		return kurzBeschreibung;
+	}
+
+	/**
+	 * @return the langBeschreibung
+	 */
+	public String getLangBeschreibung() {
+		return langBeschreibung;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Kurze Beschreibung: " + kurzBeschreibung + "\nlange Beschreibung: " + langBeschreibung;
 	}
 }
